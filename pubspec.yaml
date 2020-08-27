@@ -1,0 +1,39 @@
+name: chatty
+description: A new Flutter project.
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Blocs
+  flutter_bloc: ^5.0.1
+
+  # Comparing two objects
+  equatable: ^1.2.2
+
+  # Hasura queries and subscriptions
+  hasura_connect: ^1.2.2+1
+
+  # Save local variables
+  shared_preferences: ^0.5.8
+
+  # Toast messages
+  bot_toast: ^3.0.3
+
+  # Copy to clipboard
+  clipboard: ^0.1.2+8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+  uses-material-design: true
