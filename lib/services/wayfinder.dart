@@ -13,10 +13,6 @@ class Wayfinder {
     _navigatorKey = navigatorKey;
   }
 
-  BuildContext get context {
-    return _navigatorKey.currentState.overlay.context;
-  }
-
   void pop() {
     _navigatorKey.currentState.pop();
   }
