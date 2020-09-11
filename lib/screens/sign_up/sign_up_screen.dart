@@ -5,6 +5,9 @@ import 'package:chatty/models/user/user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../services/toaster.dart';
+import '../../services/toaster.dart';
+
 class SignUpScreen extends StatefulWidget {
   @override
   _SignUpScreenState createState() {
@@ -48,11 +51,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
             body: _body(state),
             floatingActionButton: FloatingActionButton.extended(
               onPressed: () {
-                _signUpBloc.add(
-                  CreateUser(
-                    user: User(name: _nameController.text),
-                  ),
-                );
+                var name = _nameController.text;
+                if (name.isNotEmpty) {
+                  _signUpBloc.add(
+                    CreateUser(
+                      user: User(name: _nameController.text),
+                    ),
+                  );
+                } else {
+                  Toaster.instance.toast(content: "Please Enter Name");
+                }
               },
               icon: Icon(Icons.add),
               label: Text('Sign up'),
